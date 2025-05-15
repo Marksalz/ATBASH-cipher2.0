@@ -4,7 +4,21 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+           
         }
+
+        static int DangerousWords(string message, List<string> dangerousWords)
+        {
+            int points = 0;
+            foreach (string word in dangerousWords)
+            {
+                if (message.Contains(word, StringComparison.OrdinalIgnoreCase))
+                {
+                    points++;
+                }
+            }
+            return points;
+        }
+
     }
 }
