@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+           
         }
 
         // A method to encrypt a string using the Atbash cipher
@@ -32,5 +32,19 @@
             }
             return result.ToString();
         }
+
+        static int DangerousWords(string message, List<string> dangerousWords)
+        {
+            int points = 0;
+            foreach (string word in dangerousWords)
+            {
+                if (message.Contains(word, StringComparison.OrdinalIgnoreCase))
+                {
+                    points++;
+                }
+            }
+            return points;
+        }
+
     }
 }
